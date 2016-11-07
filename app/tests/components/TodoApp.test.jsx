@@ -20,4 +20,18 @@ describe('TodoApp', ()=>{
 
     expect(todoApp.state.todos[0].text).toBe(todoText);
   });
+
+  it('should toggle checkbox when handleToggle called', ()=>{
+    var todoData = {
+      id:23456,
+      text:'test text',
+      completed:false
+    };
+    var todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
+    todoApp.setState({todos:[todoData]});
+    expect(todoApp.state.todos[0].completed).toBe(false);
+    todoApp.handleToggle(23456);
+    expect(todoApp.state.todos[0].completed).toBe(true);
+
+  });
 });
