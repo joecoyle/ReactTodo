@@ -20,7 +20,8 @@ module.exports = {
       './app/components',
       './app/api',
       './app/actions',
-      './app/reducers'
+      './app/reducers',
+      './app/store'
     ],
     alias: {
       AppStyles: 'app/styles/app.scss'
@@ -32,7 +33,7 @@ module.exports = {
       {
         loader:'babel-loader',
         query: {
-          presets: ['react','es2015']
+          presets: ['react','es2015','stage-0']
         },
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
