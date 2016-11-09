@@ -24,6 +24,31 @@ describe('Actions',()=>{
     expect(res).toEqual(action);
   });
 
+  it('should generate initial add todos action', ()=>{
+    var todos = [{
+      id:111,
+      text:'dfshdsh',
+      completed:false,
+      completedAt:undefined,
+      createdAt:34567
+    },
+    {
+      id:222,
+      text:'dwertyuih',
+      completed:true,
+      completedAt:968375,
+      createdAt:3457
+    }];
+    var action = {
+      type:'ADD_TODOS',
+      todos
+    };
+
+    var res = actions.addTodos(todos);
+
+    expect(res).toEqual(action);
+  });
+
   it('should generate toggle todo action', ()=>{
     var action = {
       type:'TOGGLE_TODO',

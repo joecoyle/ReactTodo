@@ -58,5 +58,29 @@ describe ('Reducers',()=>{
       expect(res[0].completed).toEqual(false);
       expect(res[0].completedAt).toEqual(undefined);
     });
+
+    it('should add intial todos', ()=>{
+      var todos = [{
+        id:111,
+        text:'dfshdsh',
+        completed:false,
+        completedAt:undefined,
+        createdAt:34567
+      },
+      {
+        id:222,
+        text:'dwertyuih',
+        completed:true,
+        completedAt:968375,
+        createdAt:3457
+      }];
+      var action = {
+        type:'ADD_TODOS',
+        todos
+      };
+
+      var res = reducers.todosReducer(df([]),df(action));
+      expect(res.length).toEqual(2);
+    });
   });
 });
