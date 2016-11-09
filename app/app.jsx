@@ -14,8 +14,6 @@ console.log('new state',store.getState());
 
 });
 
-store.dispatch(actions.addTodo('Wash the car'));
-store.dispatch(actions.setSearchText('car'));
 // load foundation
 $(document).foundation();
 
